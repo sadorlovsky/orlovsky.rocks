@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import CSSModules from 'react-css-modules'
-import ReactTooltip from 'react-tooltip'
-import HomePage from './HomePage'
-import ProjectPage from './ProjectPage'
+import ProjectPage from '../ProjectPage/ProjectPage.js'
 import styles from './App.sss'
 
 @CSSModules(styles)

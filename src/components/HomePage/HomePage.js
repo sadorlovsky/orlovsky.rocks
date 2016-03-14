@@ -8,7 +8,7 @@ export default class HomePage extends Component {
     return (
       <div styleName='home'>
         <div styleName='logo'>
-          <img styleName='face' src='../../assets/images/sad-face.svg' />
+          <img styleName='face' src='../../../assets/images/sad-face.svg' />
           ORLOVSKY
         </div>
       </div>
