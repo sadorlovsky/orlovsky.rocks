@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import CSSModules from 'react-css-modules'
-import ReactTooltip from 'react-tooltip'
 import HomePage from './HomePage'
 import styles from './App.sss'
 
