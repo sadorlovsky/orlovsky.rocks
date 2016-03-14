@@ -33,6 +33,7 @@
     "babel-register": "^6.7.2",
     "css-loader": "^0.23.1",
     "enzyme": "^2.1.0",
+    "lost": "^6.7.2",
     "postcss-cssnext": "^2.4.0",
     "postcss-font-magician": "^1.4.0",
     "postcss-loader": "^0.8.2",

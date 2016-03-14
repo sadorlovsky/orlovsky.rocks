@@ -2,6 +2,7 @@ var path = require('path')
 var webpack = require('webpack')
 var cssnext = require('postcss-cssnext')
 var fontMagician = require('postcss-font-magician')
+var lost = require('lost')
 
 module.exports = {
   entry: './src/index',
@@ -24,7 +25,7 @@ module.exports = {
     ]
   },
   postcss: function () {
-    return [cssnext, fontMagician]
+    return [cssnext, fontMagician, lost]
   },
   plugins: [
     new webpack.DefinePlugin({
