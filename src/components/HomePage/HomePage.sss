@@ -4,6 +4,7 @@
   display: flex
   align-items: center
   justify-content: center
+  flex-direction: column
 
 .logo
   color: #fff
@@ -14,13 +15,29 @@
   align-items: center
   border: 5px solid hsl(228, 7%, 81%)
   padding-right: 12px
-  transition: border .5s
+  transition: border-color .5s
 
 .logo:hover
   border-color: hsl(50, 74%, 61%)
 
+.logo > a
+  color: #fff
+  text-decoration: none
+
 .face
   width: 100px
+
+.links
+width: 500px
+display: flex
+margin-top: 10px
+justify-content: space-between
+font-family: 'Lato'
+font-size: 1.1rem
+
+.links a
+color: hsl(228, 7%, 81%)
+text-decoration: none
 
 @media (width <= 1000px)
   .logo
