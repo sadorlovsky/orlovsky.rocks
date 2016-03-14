@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import CSSModules from 'react-css-modules'
-import HomePage from './HomePage'
+import HomePage from '../HomePage/HomePage.js'
 import styles from './App.sss'
 
 @CSSModules(styles)
