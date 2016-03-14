@@ -11,6 +11,7 @@
   font-family: 'Lato'
   font-size: 5rem
   display: flex
+  align-items: center
   border: 5px solid hsl(228, 7%, 81%)
   padding-right: 12px
   transition: border .5s
@@ -20,3 +21,12 @@
 
 .face
   width: 100px
+
+@media (width <= 1000px)
+  .logo
+    font-size: 2.7rem
+    border-width: 3px
+    padding-right: 8px
+
+  .face
+    width: 50px
