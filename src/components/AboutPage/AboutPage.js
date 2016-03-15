@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import CSSModules from 'react-css-modules'
 import DocumentTitle from 'react-document-title'
-import { Link } from 'react-router'
-import Face from '../Face/Face.js'
+import Nav from '../Nav/Nav.js'
 import styles from './AboutPage.sss'
 
 @CSSModules(styles)
@@ -11,13 +10,7 @@ export default class AboutPage extends Component {
     return (
     <DocumentTitle title='About · Sad Orlovsky'>
       <div styleName='about'>
-        <div styleName='nav'>
-          <div>
-            <Link to='/'>
-              <Face styleName='face' />
-            </Link>
-          </div>
-        </div>
+        <Nav />
         <div styleName='text'>
           <div styleName='photo'></div>
           <p>Hey! My name is Zach Orlovsky.</p>
