@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import CSSModules from 'react-css-modules'
 import GithubIcon from 'react-icons/lib/fa/github'
 import TwitterIcon from 'react-icons/lib/fa/twitter'
+import Face from '../Face/Face.js'
 import { Link } from 'react-router'
 import styles from './HomePage.sss'
 
@@ -11,7 +12,7 @@ export default class HomePage extends Component {
     return (
       <div styleName='home'>
         <div styleName='logo'>
-          <img styleName='face' src='../../../assets/images/sad-face.svg' />
+          <Face styleName='face' />
           <Link to='/'>ORLOVSKY</Link>
         </div>
         <div styleName='links'>
