@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import CSSModules from 'react-css-modules'
 import { Link } from 'react-router'
-import ProjectList from './ProjectList'
+import ProjectList from './ProjectList/ProjectList.js'
 import Face from '../Face/Face.js'
 import styles from './ProjectPage.sss'
 
@@ -15,6 +15,7 @@ export default class ProjectPage extends Component {
             <Face styleName='face' />
           </Link>
         </div>
+        <ProjectList />
       </div>
     )
   }
