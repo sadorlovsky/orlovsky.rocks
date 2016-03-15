@@ -2,6 +2,7 @@ var path = require('path')
 var webpack = require('webpack')
 var cssnext = require('postcss-cssnext')
 var fontMagician = require('postcss-font-magician')
+var lost = require('lost')
 
 module.exports = {
   entry: './src/index',
@@ -20,11 +21,19 @@ module.exports = {
       {
         test: /\.sss$/,
         loader: 'style-loader!css-loader?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]!postcss-loader?parser=sugarss'
+      },
+      {
+        test: /\.(png|jpg|svg)$/,
+        loader: 'file-loader?name=images/[name].[ext]'
+      },
+      {
+        test: /\.json$/,
+        loader: 'json-loader'
       }
     ]
   },
   postcss: function () {
-    return [cssnext, fontMagician]
+    return [cssnext, fontMagician, lost]
   },
   plugins: [
     new webpack.DefinePlugin({
