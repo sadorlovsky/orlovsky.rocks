@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import CSSModules from 'react-css-modules'
-import moment from 'moment'
 import DocumentTitle from 'react-document-title'
 import { Link } from 'react-router'
 import Face from '../Face/Face.js'
@@ -8,12 +7,6 @@ import styles from './AboutPage.sss'
 
 @CSSModules(styles)
 export default class AboutPage extends Component {
-  age () {
-    const today = moment()
-    const birthday = moment(new Date(1994, 2, 26))
-    return Math.round(today.diff(birthday, 'years', true))
-  }
-
   render () {
     return (
     <DocumentTitle title='About · Sad Orlovsky'>
