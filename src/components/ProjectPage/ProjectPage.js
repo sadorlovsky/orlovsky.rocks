@@ -11,9 +11,11 @@ export default class ProjectPage extends Component {
     return (
       <div styleName='project-page'>
         <div styleName='nav'>
-          <Link to='/'>
-            <Face styleName='face' />
-          </Link>
+          <div>
+            <Link to='/'>
+              <Face styleName='face' />
+            </Link>
+          </div>
         </div>
         <ProjectList />
       </div>

@@ -9,27 +9,12 @@ export default class ProjectList extends Component {
     const data = [
       {
         id: 1,
-        title: 'Dockerps',
+        title: 'dockerps',
         url: 'https://github.com/sadorlovsky/dockerps',
-        description: 'Docker ps utility',
+        shortDescription: 'Pretty-print docker ps utility',
+        fullDescription: '',
         style: {
-          background: '#533745'
-        }
-      },
-      {
-        id: 2,
-        title: 'SayHey',
-        description: 'Chat App',
-        style: {
-          background: '#AB4E68'
-        }
-      },
-      {
-        id: 3,
-        title: 'Rates',
-        url: 'https://github.com/sadorlovsky/rates',
-        style: {
-          background: '#B07156'
+          background: 'hsl(228, 7%, 29%)'
         }
       }
     ]
