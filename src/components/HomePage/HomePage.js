@@ -13,25 +13,27 @@ export default class HomePage extends Component {
     return (
     <DocumentTitle title='Sad Orlovsky'>
       <div styleName='home'>
-        <div styleName='logo'>
-          <Face styleName='face' />
-          <Link to='/'>ORLOVSKY</Link>
-        </div>
-        <div styleName='links'>
-          <div>
-            <Link to='/about'>About</Link>
+        <div styleName='container'>
+          <div styleName='logo'>
+            <Face styleName='face' />
+            <Link to='/'>ORLOVSKY</Link>
           </div>
-          <div>
-            <Link to='/blog'>Blog</Link>
-          </div>
-          <div>
-            <Link to='/projects'>Projects</Link>
-          </div>
-          <div>
-            <a href='https://twitter.com/sadorlovsky'><TwitterIcon /></a>
-          </div>
-          <div>
-            <a href='https://github.com/sadorlovsky'><GithubIcon /></a>
+          <div styleName='links'>
+            <div>
+              <Link to='/about'>About</Link>
+            </div>
+            <div>
+              <Link to='/blog'>Blog</Link>
+            </div>
+            <div>
+              <Link to='/projects'>Projects</Link>
+            </div>
+            <div>
+              <a href='https://twitter.com/sadorlovsky'><TwitterIcon /></a>
+            </div>
+            <div>
+              <a href='https://github.com/sadorlovsky'><GithubIcon /></a>
+            </div>
           </div>
         </div>
       </div>

@@ -6,13 +6,17 @@
   justify-content: center
   flex-direction: column
 
+.container
+  width: 60%
+
 .logo
   color: #fff
   font-weight: bold
   font-family: 'Lato'
-  font-size: 5rem
+  font-size: 9vw
   display: flex
   align-items: center
+  justify-content: center
   border: 5px solid hsl(228, 7%, 81%)
   padding-right: 12px
   transition: border-color .5s
@@ -25,10 +29,9 @@
   text-decoration: none
 
 .face
-  width: 100px
+  width: 100%
 
 .links
-  width: 500px
   display: flex
   margin-top: 10px
   justify-content: space-between
@@ -39,11 +42,13 @@
   color: hsl(228, 7%, 81%)
   text-decoration: none
 
-@media (width <= 1000px)
+@media (width <= 800px)
   .logo
-    font-size: 2.7rem
-    border-width: 3px
-    padding-right: 8px
+    font-size: 12vw
+    border-width: 1vw
+
+  .container
+    width: 90%
 
   .face
     width: 50px
