@@ -1,8 +1,7 @@
 {
-  "name": "orlovsky",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "orlovsky.rocks",
+  "version": "0.1.0",
+  "description": "Zach Orlovsky's homepage",
   "scripts": {
     "start:dev": "node server/dev.js",
     "start:prod": "npm run build:prod && node server/prod.js",
@@ -18,8 +17,8 @@
       ]
     }
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Zach Orlovsky <sadorlovsky@gmail.com>",
+  "license": "MIT",
   "devDependencies": {
     "ava": "^0.13.0",
     "babel-core": "^6.7.2",
