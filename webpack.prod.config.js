@@ -1,7 +1,10 @@
 var path = require('path')
 var webpack = require('webpack')
+var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var cssnext = require('postcss-cssnext')
 var fontMagician = require('postcss-font-magician')
+var postcssImport = require('postcss-import')
+var lost = require('lost')
 
 module.exports = {
   entry: './src/index',
@@ -19,12 +22,27 @@ module.exports = {
       },
       {
         test: /\.sss$/,
-        loader: 'style-loader!css-loader?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]!postcss-loader?parser=sugarss'
+        loader: ExtractTextPlugin.extract('style', 'css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss-loader?parser=sugarss')
+      },
+      {
+        test: /\.(png|jpg|svg)$/,
+        loader: 'file-loader?name=images/[name].[ext]'
+      },
+      {
+        test: /\.json$/,
+        loader: 'json-loader'
       }
     ]
   },
-  postcss: function () {
-    return [cssnext, fontMagician]
+  postcss: function (webpack) {
+    return [
+      postcssImport({
+        addDependencyTo: webpack
+      }),
+      cssnext,
+      fontMagician,
+      lost
+    ]
   },
   plugins: [
     new webpack.DefinePlugin({
@@ -36,6 +54,9 @@ module.exports = {
        compress: {
          warnings: false
        }
+    }),
+    new ExtractTextPlugin('app.css', {
+      allChunks: true
     })
   ]
 }

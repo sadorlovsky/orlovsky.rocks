@@ -1,40 +1,42 @@
+var fs = require('fs')
 var path = require('path')
 var webpack = require('webpack')
+var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var cssnext = require('postcss-cssnext')
 var fontMagician = require('postcss-font-magician')
 var postcssImport = require('postcss-import')
 var lost = require('lost')
 
 module.exports = {
-  devtool: 'source-map',
-  entry: [
-    'webpack-dev-server/client?http://localhost:3000',
-    'webpack/hot/only-dev-server',
-    './src/index'
-  ],
+  entry: './server/prod',
   output: {
     path: path.join(__dirname, 'dist'),
-    filename: 'bundle.js',
-    publicPath: '/static/'
+    filename: 'server.bundle.js'
+  },
+  target: 'node',
+  externals: fs.readdirSync(path.resolve(__dirname, 'node_modules')).concat([
+    'react-dom/server'
+  ]).reduce(function(ext, mod) {
+    ext[mod] = 'commonjs ' + mod
+    return ext
+  }, {}),
+  node: {
+    __filename: true,
+    __dirname: true
   },
   module: {
     loaders: [
       {
         test: /\.js$/,
-        include: path.join(__dirname, 'src'),
-        loaders: ['react-hot', 'babel']
+        loader: 'babel-loader'
       },
       {
         test: /\.sss$/,
-        loader: 'style-loader?sourceMap!css-loader?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]!postcss-loader?parser=sugarss'
+        loader: ExtractTextPlugin.extract('style', 'css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss-loader?parser=sugarss')
       },
       {
         test: /\.(png|jpg|svg)$/,
         loader: 'file-loader?name=images/[name].[ext]'
-      },
-      {
-        test: /\.json$/,
-        loader: 'json-loader'
       }
     ]
   },
@@ -49,6 +51,8 @@ module.exports = {
     ]
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin()
+    new ExtractTextPlugin('app.css', {
+      allChunks: true
+    })
   ]
 }
