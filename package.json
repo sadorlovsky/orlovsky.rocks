@@ -4,8 +4,10 @@
   "description": "Zach Orlovsky's homepage",
   "scripts": {
     "start:dev": "node server/dev.js",
-    "start:prod": "npm run build:prod && node server/prod.js",
-    "build:prod": "webpack -p --config webpack.prod.config.js",
+    "start:prod": "npm run build && node dist/server.bundle.js",
+    "build:server": "webpack --config webpack.server.config.js",
+    "build:client": "webpack -p --config webpack.prod.config.js",
+    "build": "npm run build:client && npm run build:server",
     "test": "BABEL_DISABLE_CACHE=1 NODE_ENV=test ava 'src/**/*.test.js' --verbose --require ./test/_helper.js"
   },
   "ava": {
@@ -32,6 +34,7 @@
     "babel-register": "^6.7.2",
     "css-loader": "^0.23.1",
     "enzyme": "^2.1.0",
+    "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.8.5",
     "if-env": "^1.0.0",
     "json-loader": "^0.5.4",

@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import CSSModules from 'react-css-modules'
 import DocumentTitle from 'react-document-title'
-import GithubIcon from 'react-icons/lib/fa/github'
-import TwitterIcon from 'react-icons/lib/fa/twitter'
+// import GithubIcon from 'react-icons/lib/fa/github'
+// import TwitterIcon from 'react-icons/lib/fa/twitter'
 import Face from '../Face/Face.js'
 import { Link } from 'react-router'
 import styles from './HomePage.sss'
@@ -29,10 +29,10 @@ export default class HomePage extends Component {
               <Link to='/projects'>Projects</Link>
             </div>
             <div>
-              <a href='https://twitter.com/sadorlovsky'><TwitterIcon /></a>
+              <a href='https://twitter.com/sadorlovsky'>Twitter</a>
             </div>
             <div>
-              <a href='https://github.com/sadorlovsky'><GithubIcon /></a>
+              <a href='https://github.com/sadorlovsky'>Github</a>
             </div>
           </div>
         </div>
