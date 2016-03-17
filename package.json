@@ -5,8 +5,8 @@
   "scripts": {
     "start:dev": "node server/dev.js",
     "start:prod": "npm run build && node dist/server.bundle.js",
-    "build:server": "webpack --config webpack.server.config.js",
-    "build:client": "webpack -p --config webpack.prod.config.js",
+    "build:server": "webpack --config webpack/webpack.server.config.js",
+    "build:client": "webpack -p --config webpack/webpack.prod.config.js",
     "build": "npm run build:client && npm run build:server",
     "test": "BABEL_DISABLE_CACHE=1 NODE_ENV=test ava 'src/**/*.test.js' --verbose --require ./test/_helper.js"
   },

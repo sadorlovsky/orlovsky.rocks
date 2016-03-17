@@ -1,4 +1,3 @@
-var fs = require('fs')
 var path = require('path')
 var webpack = require('webpack')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
@@ -8,26 +7,17 @@ var postcssImport = require('postcss-import')
 var lost = require('lost')
 
 module.exports = {
-  entry: './server/prod',
+  entry: './src/index',
   output: {
-    path: path.join(__dirname, 'dist'),
-    filename: 'server.bundle.js'
-  },
-  target: 'node',
-  externals: fs.readdirSync(path.resolve(__dirname, 'node_modules')).concat([
-    'react-dom/server'
-  ]).reduce(function(ext, mod) {
-    ext[mod] = 'commonjs ' + mod
-    return ext
-  }, {}),
-  node: {
-    __filename: true,
-    __dirname: true
+    path: path.join(__dirname, '..', 'dist'),
+    filename: 'bundle.js',
+    publicPath: '/static/'
   },
   module: {
     loaders: [
       {
         test: /\.js$/,
+        include: [path.join(__dirname, '..', 'src'), path.join(__dirname, '..', 'node_modules', 'react-icons')],
         loader: 'babel-loader'
       },
       {
@@ -36,7 +26,11 @@ module.exports = {
       },
       {
         test: /\.(png|jpg|svg)$/,
-        loader: 'file-loader?name=static/images/[name].[ext]'
+        loader: 'file-loader?name=images/[name].[ext]'
+      },
+      {
+        test: /\.json$/,
+        loader: 'json-loader'
       }
     ]
   },
@@ -51,6 +45,16 @@ module.exports = {
     ]
   },
   plugins: [
+    new webpack.DefinePlugin({
+      'process.env': {
+        'NODE_ENV': JSON.stringify('production')
+      }
+    }),
+    new webpack.optimize.UglifyJsPlugin({
+       compress: {
+         warnings: false
+       }
+    }),
     new ExtractTextPlugin('app.css', {
       allChunks: true
     })

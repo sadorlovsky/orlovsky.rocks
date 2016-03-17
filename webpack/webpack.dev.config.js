@@ -13,7 +13,7 @@ module.exports = {
     './src/index'
   ],
   output: {
-    path: path.join(__dirname, 'dist'),
+    path: path.join(__dirname, '..', 'dist'),
     filename: 'bundle.js',
     publicPath: '/static/'
   },
@@ -21,7 +21,7 @@ module.exports = {
     loaders: [
       {
         test: /\.js$/,
-        include: [path.join(__dirname, 'src'), path.join(__dirname, 'node_modules', 'react-icons')],
+        include: [path.join(__dirname, '..', 'src'), path.join(__dirname, '..', 'node_modules', 'react-icons')],
         loaders: ['react-hot', 'babel']
       },
       {
