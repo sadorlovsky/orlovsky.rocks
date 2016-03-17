@@ -36,7 +36,7 @@ module.exports = {
       },
       {
         test: /\.(png|jpg|svg)$/,
-        loader: 'file-loader?context=static&name=/static/images/[name].[ext]'
+        loader: 'file-loader?name=static/images/[name].[ext]'
       }
     ]
   },
