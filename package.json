@@ -1,6 +1,6 @@
 {
   "name": "orlovsky.rocks",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Zach Orlovsky's homepage",
   "scripts": {
     "start:dev": "node server/dev.js",
