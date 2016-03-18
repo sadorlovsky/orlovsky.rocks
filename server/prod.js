@@ -7,7 +7,6 @@ import routes from '../src/routes'
 const app = express()
 
 app.use('/static', express.static('dist'))
-app.use('/assets', express.static('assets'))
 
 app.get('*', (req, res) => {
   match({ routes: routes, location: req.url }, (err, redirect, props) => {
