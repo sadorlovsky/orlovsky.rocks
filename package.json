@@ -61,6 +61,8 @@
     "react-dom": "^0.14.7",
     "react-icons": "github:gorangajic/react-icons",
     "react-markdown": "^2.1.1",
-    "react-router": "^2.0.1"
+    "react-router": "^2.0.1",
+    "redux": "^3.3.1",
+    "redux-thunk": "^2.0.1"
   }
 }
