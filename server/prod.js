@@ -43,5 +43,5 @@ function renderPage (appHtml) {
 }
 
 app.listen(3000, () => {
-  console.log('Production Express server running at localhost:3000')
+  console.log('Production server running at localhost:3000')
 })

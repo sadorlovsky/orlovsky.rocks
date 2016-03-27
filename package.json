@@ -3,7 +3,7 @@
   "version": "0.2.3",
   "description": "Zach Orlovsky's homepage",
   "scripts": {
-    "start:dev": "node server/dev.js",
+    "start:dev": "babel-node server/dev.js",
     "start:prod": "npm run build && node dist/server.bundle.js",
     "build:server": "webpack --config webpack/webpack.server.config.js",
     "build:client": "webpack -p --config webpack/webpack.prod.config.js",
@@ -23,6 +23,7 @@
   "license": "MIT",
   "devDependencies": {
     "ava": "^0.13.0",
+    "babel-cli": "^6.6.5",
     "babel-core": "^6.7.4",
     "babel-loader": "^6.2.4",
     "babel-plugin-transform-decorators-legacy": "^1.3.4",
@@ -48,7 +49,8 @@
     "style-loader": "^0.13.1",
     "sugarss": "^0.1.0",
     "webpack": "^1.12.14",
-    "webpack-dev-server": "^1.14.1"
+    "webpack-dev-middleware": "^1.6.1",
+    "webpack-hot-middleware": "^2.10.0"
   },
   "dependencies": {
     "express": "^4.13.4",
