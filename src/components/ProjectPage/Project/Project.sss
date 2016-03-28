@@ -7,20 +7,18 @@
   box-sizing: border-box
   height: 200px
   margin-bottom: 30px
-  display: flex
-  align-items: center
-  justify-content: center
   font-family: 'Lato'
+  font-size: 1.5rem
 
 .inner
   position: relative
   z-index: 1
   width: 100%
   height: 100%
-  cursor: pointer
   display: flex
   align-items: center
   justify-content: center
+  flex-direction: column
 
 .inner::after
   content: ''
@@ -35,3 +33,14 @@
 
 .inner:hover::after
   height: 100%
+
+.github
+  color: black
+  transition: color .4s
+
+.inner:hover .github
+  color: white
+
+@media (width <= 980px)
+  .project
+    lost-column: 1/1

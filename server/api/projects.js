@@ -6,23 +6,33 @@ const router = express.Router()
 const projects = [
   {
     id: 1,
-    title: 'dockerps'
+    title: 'dockerps',
+    slug: 'dockerps',
+    github: 'https://github.com/sadorlovsky/dockerps'
   },
   {
     id: 2,
-    title: 'currency converter'
+    title: 'currency converter',
+    slug: 'currency-converter',
+    github: 'https://github.com/sadorlovsky/currency-converter-chrome-extension'
   },
   {
     id: 3,
-    title: 'codestyle'
+    title: 'codestyle',
+    slug: 'codestyle',
+    github: 'https://github.com/sadorlovsky/codestyle'
   },
   {
     id: 4,
-    title: 'sayhey'
+    title: 'sayhey',
+    slug: 'sayhey',
+    github: 'https://github.com/sadorlovsky/sayhey'
   },
   {
     id: 5,
-    title: 'inteh-info.ru telegram bot'
+    title: 'inteh-info.ru telegram bot',
+    slug: 'inteh-info-notifier',
+    github: 'https://github.com/sadorlovsky/inteh-info-notifier'
   }
 ]
 
