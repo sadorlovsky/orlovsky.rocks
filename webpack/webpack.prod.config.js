@@ -57,6 +57,9 @@ module.exports = {
     }),
     new ExtractTextPlugin('app.css', {
       allChunks: true
+    }),
+    new webpack.ProvidePlugin({
+      'fetch': 'imports?this=>global!exports?global.fetch!whatwg-fetch'
     })
   ]
 }
