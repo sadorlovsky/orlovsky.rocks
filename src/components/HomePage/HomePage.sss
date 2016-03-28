@@ -8,14 +8,11 @@
   justify-content: center
   flex-direction: column
 
-.container
-  width: 60%
-
 .logo
   color: #fff
   font-weight: bold
   font-family: 'Lato'
-  font-size: 9vw
+  font-size: 7vw
   display: flex
   align-items: center
   justify-content: center
@@ -31,7 +28,7 @@
   text-decoration: none
 
 .face
-  width: 100%
+  width: calc(7vw * 1.2)
 
 .links
   display: flex
@@ -44,13 +41,26 @@
   color: var(--very-light-grey)
   text-decoration: none
 
-@media (width <= 800px)
+@media (width <= 980px)
   .logo
-    font-size: 12vw
+    font-size: 10vw
     border-width: 1vw
 
-  .container
-    width: 90%
-
   .face
-    width: 50px
+    width: calc(10vw * 1.2)
+
+@media (width <= 480px)
+  .logo
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    border: none
+    padding: 0
+
+  .links
+    flex-direction: column
+    align-items: center
+    font-size: 7vw
+
+  .links > div:not(:last-child)
+    margin-bottom: 20px

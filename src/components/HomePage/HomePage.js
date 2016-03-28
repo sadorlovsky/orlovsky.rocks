@@ -13,7 +13,7 @@ export default class HomePage extends Component {
     return (
     <DocumentTitle title='Sad Orlovsky'>
       <div styleName='home'>
-        <div styleName='container'>
+        <div>
           <div styleName='logo'>
             <Face styleName='face' />
             <Link to='/'>ORLOVSKY</Link>
