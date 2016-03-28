@@ -1,12 +1,16 @@
 import React from 'react'
 import { renderToString } from 'react-dom/server'
 import { match, RouterContext } from 'react-router'
+import { Provider } from 'react-redux'
 import express from 'express'
+import projectsApi from './api/projects'
 import routes from '../src/routes'
+import store from '../src/store'
 
 const app = express()
 
 app.use('/static', express.static('dist'))
+app.use('/api/projects', projectsApi)
 
 app.get('*', (req, res) => {
   match({ routes: routes, location: req.url }, (err, redirect, props) => {
@@ -15,15 +19,20 @@ app.get('*', (req, res) => {
     } else if (redirect) {
       res.redirect(redirect.pathname + redirect.search)
     } else if (props) {
-      const appHtml = renderToString(<RouterContext {...props} />)
-      res.send(renderPage(appHtml))
+      const appHtml = renderToString(
+        <Provider store={store}>
+          <RouterContext {...props} />
+        </Provider>
+      )
+      const initialState = store.getState()
+      res.send(renderPage(appHtml, initialState))
     } else {
       res.status(404).send('Not found')
     }
   })
 })
 
-function renderPage (appHtml) {
+function renderPage (appHtml, initialState) {
   return `
   <!DOCTYPE html>
   <html>
@@ -36,6 +45,9 @@ function renderPage (appHtml) {
     </head>
     <body>
       <div id="root">${appHtml}</div>
+      <script>
+        window.__INITIAL_STATE__ = ${JSON.stringify(initialState)}
+      </script>
       <script src="/static/bundle.js"></script>
     </body>
   </html>
