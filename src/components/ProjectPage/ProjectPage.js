@@ -11,7 +11,7 @@ export default class ProjectPage extends Component {
     return (
     <DocumentTitle title='Projects · Sad Orlovsky'>
       <div styleName='project-page'>
-        <Nav />
+        {/*<Nav />*/}
         <ProjectList />
       </div>
     </DocumentTitle>

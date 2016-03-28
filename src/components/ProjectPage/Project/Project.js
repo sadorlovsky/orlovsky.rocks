@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router'
 import CSSModules from 'react-css-modules'
 import Markdown from 'react-markdown'
 import styles from './Project.sss'
@@ -7,14 +8,9 @@ import styles from './Project.sss'
 export default class Project extends Component {
   render () {
     return (
-      <div styleName='project' style={ this.props.style }>
-        <div styleName='title'>{ this.props.title }</div>
-        <div styleName='short-description'>{ this.props.shortDescription }</div>
-        <div styleName='url'>
-          <a href={ this.props.url }> { this.props.url }</a>
-        </div>
-        <div styleName='full-description'>
-          <Markdown source={ this.props.fullDescription } />
+      <div styleName='project'>
+        <div styleName='inner'>
+          <div>{this.props.title}</div>
         </div>
       </div>
     )
