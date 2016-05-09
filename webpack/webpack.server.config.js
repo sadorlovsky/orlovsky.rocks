@@ -1,11 +1,11 @@
-var fs = require('fs')
-var path = require('path')
-var webpack = require('webpack')
-var ExtractTextPlugin = require('extract-text-webpack-plugin')
-var cssnext = require('postcss-cssnext')
-var fontMagician = require('postcss-font-magician')
-var postcssImport = require('postcss-import')
-var lost = require('lost')
+const fs = require('fs')
+const path = require('path')
+const webpack = require('webpack')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const cssnext = require('postcss-cssnext')
+const fontMagician = require('postcss-font-magician')
+const postcssImport = require('postcss-import')
+const lost = require('lost')
 
 module.exports = {
   entry: './server/prod',
@@ -16,7 +16,7 @@ module.exports = {
   target: 'node',
   externals: fs.readdirSync(path.resolve(__dirname, '..', 'node_modules')).concat([
     'react-dom/server'
-  ]).reduce(function(ext, mod) {
+  ]).reduce((ext, mod) => {
     ext[mod] = 'commonjs ' + mod
     return ext
   }, {}),
@@ -40,10 +40,10 @@ module.exports = {
       }
     ]
   },
-  postcss: function (webpack) {
+  postcss (_webpack) {
     return [
       postcssImport({
-        addDependencyTo: webpack
+        addDependencyTo: _webpack
       }),
       cssnext,
       fontMagician,

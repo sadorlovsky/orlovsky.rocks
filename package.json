@@ -9,16 +9,23 @@
     "build:client": "webpack -p --config webpack/webpack.prod.config.js",
     "build": "npm run build:client && npm run build:server",
     "lint": "eslint src server test",
-    "test": "BABEL_DISABLE_CACHE=1 NODE_ENV=test ava 'src/**/*.test.js' --verbose --require ./test/_helper.js"
+    "test": "CONFIG=$(pwd)/webpack/webpack.test.config.js BABEL_DISABLE_CACHE=1 NODE_ENV=TEST nyc ava",
+    "coveralls": "nyc report --reporter=text-lcov | coveralls"
   },
   "ava": {
-    "babel": {
-      "presets": [
-        "es2015",
-        "stage-0",
-        "react"
-      ]
-    }
+    "files": [
+      "src/**/*.test.js"
+    ],
+    "babel": "inherit",
+    "require": [
+      "babel-register",
+      "babel-polyfill"
+    ]
+  },
+  "nyc": {
+    "include": [
+      "src/**/*.js"
+    ]
   },
   "author": "Zach Orlovsky <sadorlovsky@gmail.com>",
   "license": "MIT",
@@ -36,6 +43,7 @@
     "babel-preset-react": "^6.5.0",
     "babel-preset-stage-0": "^6.5.0",
     "babel-register": "^6.7.2",
+    "coveralls": "^2.11.9",
     "css-loader": "^0.23.1",
     "enzyme": "^2.2.0",
     "eslint": "^2.9.0",
@@ -49,12 +57,14 @@
     "imports-loader": "^0.6.5",
     "json-loader": "^0.5.4",
     "lost": "^6.7.2",
+    "nyc": "^6.4.3",
     "postcss-cssnext": "^2.5.2",
     "postcss-font-magician": "^1.4.0",
     "postcss-import": "^8.1.0",
     "postcss-loader": "^0.9.1",
     "react-addons-test-utils": "^15.0.1",
     "react-hot-loader": "^1.3.0",
+    "rimraf": "^2.5.2",
     "style-loader": "^0.13.1",
     "sugarss": "^0.1.0",
     "webpack": "^1.12.14",

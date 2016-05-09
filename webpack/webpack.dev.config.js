@@ -1,9 +1,9 @@
-var path = require('path')
-var webpack = require('webpack')
-var cssnext = require('postcss-cssnext')
-var fontMagician = require('postcss-font-magician')
-var postcssImport = require('postcss-import')
-var lost = require('lost')
+const path = require('path')
+const webpack = require('webpack')
+const cssnext = require('postcss-cssnext')
+const fontMagician = require('postcss-font-magician')
+const postcssImport = require('postcss-import')
+const lost = require('lost')
 
 module.exports = {
   devtool: 'source-map',
@@ -37,10 +37,10 @@ module.exports = {
       }
     ]
   },
-  postcss: function (webpack) {
+  postcss (_webpack) {
     return [
       postcssImport({
-        addDependencyTo: webpack
+        addDependencyTo: _webpack
       }),
       cssnext,
       fontMagician,

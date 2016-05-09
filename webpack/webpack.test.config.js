@@ -1,3 +1,9 @@
+const webpack = require('webpack')
+const cssnext = require('postcss-cssnext')
+const fontMagician = require('postcss-font-magician')
+const postcssImport = require('postcss-import')
+const lost = require('lost')
+
 module.exports = {
   output: {
     libraryTarget: 'commonjs2',
@@ -17,5 +23,20 @@ module.exports = {
         loader: 'json-loader'
       }
     ]
-  }
+  },
+  postcss (_webpack) {
+    return [
+      postcssImport({
+        addDependencyTo: _webpack
+      }),
+      cssnext,
+      fontMagician,
+      lost
+    ]
+  },
+  plugins: [
+    new webpack.ProvidePlugin({
+      'fetch': 'imports?this=>global!exports?global.fetch!whatwg-fetch'
+    })
+  ]
 }
