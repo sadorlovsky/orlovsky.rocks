@@ -1,21 +1,15 @@
-export function requestData () {
-  return {
-    type: 'REQUEST_DATA'
-  }
-}
+import { createAction } from 'redux-actions'
 
-export function loadData (data) {
-  return {
-    type: 'LOAD_DATA',
-    data
-  }
-}
+const fetchRequest = createAction('FETCH_REQUEST')
+const fetchSuccess = createAction('FETCH_SUCCESS')
+const fetchFailure = createAction('FETCH_FAILURE')
 
-export function fetchData () {
+export const fetchData = () => {
   return dispatch => {
-    dispatch(requestData())
+    dispatch(fetchRequest())
     return fetch('/api/projects')
       .then(response => response.json())
-      .then(projects => dispatch(loadData(projects)))
+      .then(projects => dispatch(fetchSuccess({ data: projects })))
+      .catch(error => dispatch(fetchFailure(error)))
   }
 }

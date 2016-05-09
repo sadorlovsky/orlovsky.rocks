@@ -1,16 +1,17 @@
+import { handleActions } from 'redux-actions'
+
 const initialState = {
   data: [],
   isFetching: false
 }
 
-export default function projects (state = initialState, action) {
-  switch (action.type) {
-    case 'REQUEST_DATA':
-      return { ...state, isFetching: true }
-    case 'LOAD_DATA':
-      const data = action.data
-      return { ...state, data, isFetching: false }
-    default:
-      return state
-  }
-}
+const projects = handleActions({
+  'FETCH_REQUEST': state => ({ ...state, isFetching: true }),
+  'FETCH_SUCCESS': (state, action) => ({
+    ...state,
+    data: action.payload,
+    isFetching: false
+  })
+}, initialState)
+
+export default projects
