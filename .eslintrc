@@ -1,0 +1,15 @@
+{
+  "extends": [
+    "@sadorlovsky",
+    "@sadorlovsky/eslint-config/ava",
+    "@sadorlovsky/eslint-config/react"
+  ],
+
+  "settings": {
+    "import/ignore": ["node_modules", ".(css|sss)$"]
+  },
+
+  "rules": {
+    "import/no-mutable-exports": "off"
+  }
+}
