@@ -57,10 +57,10 @@
   "dependencies": {
     "express": "^4.13.4",
     "moment": "^2.12.0",
-    "react": "^15.0.1",
+    "react": "^15.0.2",
     "react-css-modules": "^3.7.5",
     "react-document-title": "^2.0.1",
-    "react-dom": "^15.0.1",
+    "react-dom": "^15.0.2",
     "react-icons": "github:gorangajic/react-icons",
     "react-markdown": "^2.1.1",
     "react-redux": "^4.4.2",
