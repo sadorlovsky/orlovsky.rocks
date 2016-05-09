@@ -36,7 +36,7 @@ const projects = [
   }
 ]
 
-router.get('/', (req, res) => {
+router.get('/', (_, res) => {
   res.json(projects)
 })
 

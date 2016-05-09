@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
-import CSSModules from 'react-css-modules'
+import css from 'react-css-modules'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { fetchData } from '../../../actions'
-import Project from '../Project/Project.js'
+import Project from '../Project/Project'
 import styles from './ProjectList.sss'
 
 const mapStateToProps = state => {
@@ -18,13 +18,13 @@ const mapDispatchToProps = dispatch => {
 }
 
 @connect(mapStateToProps, mapDispatchToProps)
-@CSSModules(styles)
+@css(styles)
 export default class ProjectList extends Component {
   componentDidMount () {
     this.props.fetchData()
   }
 
-  shouldComponentUpdate (nextProps, nextState) {
+  shouldComponentUpdate (nextProps) {
     return nextProps.data !== this.props.data
   }
 
@@ -34,7 +34,7 @@ export default class ProjectList extends Component {
     })
     return (
       <div styleName='list'>
-        { projects }
+        {projects}
       </div>
     )
   }

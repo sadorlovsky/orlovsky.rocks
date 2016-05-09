@@ -1,12 +1,12 @@
 import React from 'react'
-import { Router, Route, IndexRoute, browserHistory } from 'react-router'
-import App from './components/App/App.js'
-import ProjectPage from './components/ProjectPage/ProjectPage.js'
-import HomePage from './components/HomePage/HomePage.js'
-import AboutPage from './components/AboutPage/AboutPage.js'
-import Blog from './components/Blog/Blog.js'
+import { Route, IndexRoute } from 'react-router'
+import App from './components/App/App'
+import ProjectPage from './components/ProjectPage/ProjectPage'
+import HomePage from './components/HomePage/HomePage'
+import AboutPage from './components/AboutPage/AboutPage'
+import Blog from './components/Blog/Blog'
 
-module.exports = (
+const routes = (
   <Route path='/' component={App}>
     <IndexRoute component={HomePage} />
     <Route path='about' component={AboutPage} />
@@ -14,3 +14,5 @@ module.exports = (
     <Route path='projects(/:slug)' component={ProjectPage} />
   </Route>
 )
+
+export default routes

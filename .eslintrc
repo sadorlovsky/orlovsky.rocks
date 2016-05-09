@@ -6,10 +6,11 @@
   ],
 
   "settings": {
-    "import/ignore": ["node_modules", ".(css|sss)$"]
+    "import/ignore": ["node_modules", ".(css|sss|svg)$"]
   },
 
   "rules": {
+    "no-extra-parens": ["error", "functions"],
     "import/no-mutable-exports": "off"
   }
 }
