@@ -5,12 +5,10 @@ import { Provider } from 'react-redux'
 import express from 'express'
 import routes from '../src/routes'
 import store from '../src/store'
-import projectsApi from './api/projects'
 
 const app = express()
 
 app.use('/static', express.static('dist'))
-app.use('/api/projects', projectsApi)
 
 const renderPage = (appHtml, initialState) => {
   return `

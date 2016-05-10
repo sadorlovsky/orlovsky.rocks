@@ -1,1 +1,3 @@
-export projects from './projects'
+export function reducer (state) {
+  return state
+}

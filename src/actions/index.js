@@ -1,1 +1,3 @@
-export * as actions from './actions'
+export function action () {
+  // empty
+}
