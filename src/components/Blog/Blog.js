@@ -15,4 +15,4 @@ const Blog = () => {
   )
 }
 
-export default css(styles, Blog)
+export default css(Blog, styles)

@@ -39,4 +39,4 @@ const HomePage = () => {
   )
 }
 
-export default css(styles, HomePage)
+export default css(HomePage, styles)

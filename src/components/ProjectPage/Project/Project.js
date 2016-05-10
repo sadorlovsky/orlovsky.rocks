@@ -18,4 +18,4 @@ const Project = props => {
   )
 }
 
-export default css(styles, Project)
+export default css(Project, styles)

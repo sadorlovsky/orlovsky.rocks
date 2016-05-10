@@ -20,4 +20,4 @@ const AboutPage = () => {
   )
 }
 
-export default css(styles, AboutPage)
+export default css(AboutPage, styles)

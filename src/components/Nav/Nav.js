@@ -16,4 +16,4 @@ const Nav = () => {
   )
 }
 
-export default css(styles, Nav)
+export default css(Nav, styles)

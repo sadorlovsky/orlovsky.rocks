@@ -16,4 +16,4 @@ const ProjectPage = () => {
   )
 }
 
-export default css(styles, ProjectPage)
+export default css(ProjectPage, styles)

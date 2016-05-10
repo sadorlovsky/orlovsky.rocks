@@ -10,4 +10,4 @@ const App = props => {
   )
 }
 
-export default css(styles, App)
+export default css(App, styles)
