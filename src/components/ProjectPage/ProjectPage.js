@@ -4,6 +4,8 @@ import DocumentTitle from 'react-document-title'
 import Nav from '../Nav/Nav'
 import styles from './ProjectPage.sss'
 import Lissie from './projects/lissie'
+import Dockerps from './projects/dockerps'
+import Codestyle from './projects/codestyle'
 
 const ProjectPage = () => {
   return (
@@ -12,6 +14,8 @@ const ProjectPage = () => {
         <Nav />
         <div styleName='project-page'>
           <Lissie />
+          <Dockerps />
+          <Codestyle />
         </div>
       </div>
     </DocumentTitle>
