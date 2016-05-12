@@ -3,12 +3,7 @@ import css from 'react-css-modules'
 import DocumentTitle from 'react-document-title'
 import Nav from '../Nav/Nav'
 import styles from './ProjectPage.sss'
-
-const Project = props => {
-  return (
-    <div>{props.name}</div>
-  )
-}
+import Lissie from './projects/lissie'
 
 const ProjectPage = () => {
   return (
@@ -16,7 +11,7 @@ const ProjectPage = () => {
       <div>
         <Nav />
         <div styleName='project-page'>
-          <Project name='Lissie' />
+          <Lissie />
         </div>
       </div>
     </DocumentTitle>
