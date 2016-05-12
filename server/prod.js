@@ -1,10 +1,8 @@
 import React from 'react'
 import { renderToString } from 'react-dom/server'
 import { match, RouterContext } from 'react-router'
-import { Provider } from 'react-redux'
 import express from 'express'
 import routes from '../src/routes'
-import store from '../src/store'
 
 const app = express()
 
@@ -41,12 +39,9 @@ app.get('*', (req, res) => {
       res.redirect(redirect.pathname + redirect.search)
     } else if (props) {
       const appHtml = renderToString(
-        <Provider store={store}>
-          <RouterContext {...props} />
-        </Provider>
+        <RouterContext {...props} />
       )
-      const initialState = store.getState()
-      res.send(renderPage(appHtml, initialState))
+      res.send(renderPage(appHtml))
     } else {
       res.status(404).send('Not found')
     }
