@@ -8,7 +8,7 @@ const lost = require('lost')
 module.exports = {
   devtool: 'source-map',
   entry: [
-    'webpack-hot-middleware/client',
+    'webpack-hot-middleware/client?reload=true',
     './src/index'
   ],
   output: {
