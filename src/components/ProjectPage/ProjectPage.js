@@ -3,9 +3,7 @@ import css from 'react-css-modules'
 import DocumentTitle from 'react-document-title'
 import Nav from '../Nav/Nav'
 import styles from './ProjectPage.sss'
-import Lissie from './projects/lissie'
-import Dockerps from './projects/dockerps'
-import Codestyle from './projects/codestyle'
+import { Lissie, Dockerps, Codestyle, KinopoiskApi } from './projects'
 
 const ProjectPage = () => {
   return (
@@ -16,6 +14,7 @@ const ProjectPage = () => {
           <Lissie />
           <Dockerps />
           <Codestyle />
+          <KinopoiskApi />
         </div>
       </div>
     </DocumentTitle>

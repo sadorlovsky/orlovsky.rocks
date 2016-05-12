@@ -2,7 +2,7 @@ import React from 'react'
 
 const Codestyle = () => {
   return (
-    <div style={{ background: 'black', color: 'white' }}>
+    <div style={{ background: 'hsl(228, 7%, 12%)', color: 'white' }}>
       <h1>CODESTYLE</h1>
       <div>ESLint shareable config</div>
       <div>
@@ -13,9 +13,9 @@ const Codestyle = () => {
         </ul>
       </div>
       <div>
-        <a href='https://npmjs.com/package/@sadorlovsky/eslint-config'>npm</a>
+        <a style={{ color: 'hsl(196, 64%, 58%)' }} href='https://npmjs.com/package/@sadorlovsky/eslint-config'>npm</a>
         <span> · </span>
-        <a href='https://github.com/sadorlovsky/codestyle'>github</a>
+        <a style={{ color: 'hsl(196, 64%, 58%)' }} href='https://github.com/sadorlovsky/codestyle'>github</a>
       </div>
     </div>
   )

@@ -6,9 +6,9 @@ const Dockerps = () => {
       <h1>dockerps</h1>
       <h2>dockerps is like a normal docker ps but has nice readable output</h2>
       <div>
-        <a href='https://npmjs.com/package/dockerps'>npm</a>
+        <a style={{ color: 'hsl(352, 81%, 58%)' }} href='https://npmjs.com/package/dockerps'>npm</a>
         <span> · </span>
-        <a href='https://github.com/sadorlovsky/dockerps'>github</a>
+        <a style={{ color: 'hsl(352, 81%, 58%)' }} href='https://github.com/sadorlovsky/dockerps'>github</a>
       </div>
     </div>
   )
