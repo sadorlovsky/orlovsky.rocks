@@ -3,6 +3,7 @@ import express from 'express'
 import webpack from 'webpack'
 import webpackDevMiddleware from 'webpack-dev-middleware'
 import webpackHotMiddleware from 'webpack-hot-middleware'
+/* eslint import/default: "off" */
 import config from '../webpack/webpack.dev.config'
 import blogApi from './api/blog'
 
