@@ -1,13 +1,11 @@
-import React, { Component } from 'react'
-import CSSModules from 'react-css-modules'
+import React from 'react'
+import css from 'react-css-modules'
 import DocumentTitle from 'react-document-title'
-import Nav from '../Nav/Nav.js'
+import Nav from '../Nav/Nav'
 import styles from './AboutPage.sss'
 
-@CSSModules(styles)
-export default class AboutPage extends Component {
-  render () {
-    return (
+const AboutPage = () => {
+  return (
     <DocumentTitle title='About · Sad Orlovsky'>
       <div styleName='about'>
         <Nav />
@@ -19,6 +17,7 @@ export default class AboutPage extends Component {
         </div>
       </div>
     </DocumentTitle>
-    )
-  }
+  )
 }
+
+export default css(AboutPage, styles)

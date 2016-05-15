@@ -1,3 +1,3 @@
-export default function (req, res) {
+export default function (_, res) {
   res.send('BLOG')
 }

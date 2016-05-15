@@ -1,20 +1,31 @@
-import React, { Component } from 'react'
-import CSSModules from 'react-css-modules'
+import React from 'react'
+import css from 'react-css-modules'
 import DocumentTitle from 'react-document-title'
-import ProjectList from './ProjectList/ProjectList.js'
-import Nav from '../Nav/Nav.js'
+import Nav from '../Nav/Nav'
 import styles from './ProjectPage.sss'
+import {
+  Lissie,
+  Dockerps,
+  Codestyle,
+  KinopoiskApi,
+  TelegramBots
+} from './projects'
 
-@CSSModules(styles)
-export default class ProjectPage extends Component {
-  render () {
-    return (
+const ProjectPage = () => {
+  return (
     <DocumentTitle title='Projects · Sad Orlovsky'>
-      <div styleName='project-page'>
+      <div>
         <Nav />
-        <ProjectList />
+        <div styleName='project-page'>
+          <Lissie />
+          <Dockerps />
+          <Codestyle />
+          <KinopoiskApi />
+          <TelegramBots />
+        </div>
       </div>
     </DocumentTitle>
-    )
-  }
+  )
 }
+
+export default css(ProjectPage, styles)

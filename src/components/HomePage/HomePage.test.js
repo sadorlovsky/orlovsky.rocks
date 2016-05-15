@@ -1,10 +1,10 @@
 import React from 'react'
 import test from 'ava'
 import { shallow } from 'enzyme'
-import HomePage from './HomePage.js'
+import HomePage from './HomePage'
 
 const wrapper = shallow(<HomePage />)
 
 test('HomePage component is ok', t => {
-  t.ok(wrapper)
+  t.truthy(wrapper)
 })

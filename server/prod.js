@@ -1,38 +1,14 @@
 import React from 'react'
 import { renderToString } from 'react-dom/server'
 import { match, RouterContext } from 'react-router'
-import { Provider } from 'react-redux'
 import express from 'express'
-import projectsApi from './api/projects'
 import routes from '../src/routes'
-import store from '../src/store'
 
 const app = express()
 
 app.use('/static', express.static('dist'))
-app.use('/api/projects', projectsApi)
 
-app.get('*', (req, res) => {
-  match({ routes: routes, location: req.url }, (err, redirect, props) => {
-    if (err) {
-      res.status(500).send(err.message)
-    } else if (redirect) {
-      res.redirect(redirect.pathname + redirect.search)
-    } else if (props) {
-      const appHtml = renderToString(
-        <Provider store={store}>
-          <RouterContext {...props} />
-        </Provider>
-      )
-      const initialState = store.getState()
-      res.send(renderPage(appHtml, initialState))
-    } else {
-      res.status(404).send('Not found')
-    }
-  })
-})
-
-function renderPage (appHtml, initialState) {
+const renderPage = (appHtml, initialState) => {
   return `
   <!DOCTYPE html>
   <html>
@@ -53,6 +29,24 @@ function renderPage (appHtml, initialState) {
   </html>
    `
 }
+
+/* eslint complexity: "off" */
+app.get('*', (req, res) => {
+  match({ routes, location: req.url }, (err, redirect, props) => {
+    if (err) {
+      res.status(500).send(err.message)
+    } else if (redirect) {
+      res.redirect(redirect.pathname + redirect.search)
+    } else if (props) {
+      const appHtml = renderToString(
+        <RouterContext {...props} />
+      )
+      res.send(renderPage(appHtml))
+    } else {
+      res.status(404).send('Not found')
+    }
+  })
+})
 
 app.listen(3000, () => {
   console.log('Production server running at localhost:3000')

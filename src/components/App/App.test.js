@@ -1,8 +1,8 @@
 import React from 'react'
 import test from 'ava'
 import { shallow } from 'enzyme'
-import App from './App.js'
-import ProjectPage from '../ProjectPage/ProjectPage.js'
+import ProjectPage from '../ProjectPage/ProjectPage'
+import App from './App'
 
 test('App component renders ProjectPage component', t => {
   const wrapper = shallow(<App />)

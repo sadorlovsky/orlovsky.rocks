@@ -1,16 +1,14 @@
-import React, { Component } from 'react'
-import CSSModules from 'react-css-modules'
+import React from 'react'
+import css from 'react-css-modules'
 import DocumentTitle from 'react-document-title'
 import GithubIcon from 'react-icons/fa/github'
 import TwitterIcon from 'react-icons/fa/twitter'
-import Face from '../Face/Face.js'
 import { Link } from 'react-router'
+import Face from '../Face/Face'
 import styles from './HomePage.sss'
 
-@CSSModules(styles)
-export default class HomePage extends Component {
-  render () {
-    return (
+const HomePage = () => {
+  return (
     <DocumentTitle title='Sad Orlovsky'>
       <div styleName='home'>
         <div>
@@ -38,6 +36,7 @@ export default class HomePage extends Component {
         </div>
       </div>
     </DocumentTitle>
-    )
-  }
+  )
 }
+
+export default css(HomePage, styles)

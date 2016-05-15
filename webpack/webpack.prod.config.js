@@ -1,10 +1,10 @@
-var path = require('path')
-var webpack = require('webpack')
-var ExtractTextPlugin = require('extract-text-webpack-plugin')
-var cssnext = require('postcss-cssnext')
-var fontMagician = require('postcss-font-magician')
-var postcssImport = require('postcss-import')
-var lost = require('lost')
+const path = require('path')
+const webpack = require('webpack')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const cssnext = require('postcss-cssnext')
+const fontMagician = require('postcss-font-magician')
+const postcssImport = require('postcss-import')
+const lost = require('lost')
 
 module.exports = {
   entry: './src/index',
@@ -34,10 +34,10 @@ module.exports = {
       }
     ]
   },
-  postcss: function (webpack) {
+  postcss (_webpack) {
     return [
       postcssImport({
-        addDependencyTo: webpack
+        addDependencyTo: _webpack
       }),
       cssnext,
       fontMagician,
@@ -51,9 +51,9 @@ module.exports = {
       }
     }),
     new webpack.optimize.UglifyJsPlugin({
-       compress: {
-         warnings: false
-       }
+      compress: {
+        warnings: false
+      }
     }),
     new ExtractTextPlugin('app.css', {
       allChunks: true

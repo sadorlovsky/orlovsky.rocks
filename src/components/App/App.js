@@ -1,14 +1,13 @@
-import React, { Component } from 'react'
-import CSSModules from 'react-css-modules'
+import React from 'react'
+import css from 'react-css-modules'
 import styles from './App.sss'
 
-@CSSModules(styles)
-export default class App extends Component {
-  render () {
-    return (
-      <div>
-        { this.props.children }
-      </div>
-    )
-  }
+const App = props => {
+  return (
+    <div>
+      {props.children}
+    </div>
+  )
 }
+
+export default css(App, styles)
