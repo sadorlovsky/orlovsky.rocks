@@ -3,7 +3,13 @@ import css from 'react-css-modules'
 import DocumentTitle from 'react-document-title'
 import Nav from '../Nav/Nav'
 import styles from './ProjectPage.sss'
-import { Lissie, Dockerps, Codestyle, KinopoiskApi } from './projects'
+import {
+  Lissie,
+  Dockerps,
+  Codestyle,
+  KinopoiskApi,
+  TelegramBots
+} from './projects'
 
 const ProjectPage = () => {
   return (
@@ -15,6 +21,7 @@ const ProjectPage = () => {
           <Dockerps />
           <Codestyle />
           <KinopoiskApi />
+          <TelegramBots />
         </div>
       </div>
     </DocumentTitle>
