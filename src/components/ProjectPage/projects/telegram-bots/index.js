@@ -8,12 +8,15 @@ const TelegramBots = () => {
       <h1>Telegram bots</h1>
       <div>
         <h2>yes/no</h2>
+        <div>@YepNopeBot</div>
       </div>
       <div>
         <h2>kinopoisk</h2>
+        <div>@FindMovieBot</div>
       </div>
       <div>
         <h2>inteh-info notifier</h2>
+        <div>@IntehInfoNotifierBot</div>
       </div>
     </div>
   )

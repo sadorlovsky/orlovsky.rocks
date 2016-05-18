@@ -8,7 +8,9 @@ import {
   Dockerps,
   Codestyle,
   KinopoiskApi,
-  TelegramBots
+  TelegramBots,
+  CurrencyConverter,
+  Letsago
 } from './projects'
 
 const ProjectPage = () => {
@@ -22,6 +24,8 @@ const ProjectPage = () => {
           <Codestyle />
           <KinopoiskApi />
           <TelegramBots />
+          <CurrencyConverter />
+          <Letsago />
         </div>
       </div>
     </DocumentTitle>
