@@ -1,15 +1,21 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
-import { Router, browserHistory, applyRouterMiddleware } from 'react-router'
-import useScroll from 'react-router-scroll'
-import routes from './routes'
+import { render } from 'react-dom'
+import { AppContainer } from 'react-hot-loader'
+import App from './components/App/App'
 
-const history = browserHistory
-
-ReactDOM.render((
-  <Router
-    routes={routes}
-    history={history}
-    render={applyRouterMiddleware(useScroll())}
-  />
+render((
+  <AppContainer>
+    <App />
+  </AppContainer>
 ), document.getElementById('root'))
+
+if (module.hot) {
+  module.hot.accept('./components/App/App', () => {
+    const NextApp = require('./components/App/App').default
+    render((
+      <AppContainer>
+        <NextApp />
+      </AppContainer>
+    ), document.getElementById('root'))
+  })
+}

@@ -8,6 +8,7 @@ const lost = require('lost')
 module.exports = {
   devtool: 'source-map',
   entry: [
+    'react-hot-loader/patch',
     'webpack-hot-middleware/client?reload=true',
     './src/index'
   ],
@@ -21,7 +22,7 @@ module.exports = {
       {
         test: /\.js$/,
         include: [path.join(__dirname, '..', 'src'), path.join(__dirname, '..', 'node_modules', 'react-icons')],
-        loaders: ['react-hot', 'babel']
+        loaders: ['babel']
       },
       {
         test: /\.sss$/,
