@@ -9,7 +9,7 @@
     "build:client": "webpack -p --config webpack/webpack.prod.config.js",
     "build": "npm run build:client && npm run build:server",
     "lint": "eslint src server test",
-    "test": "CONFIG=$(pwd)/webpack/webpack.test.config.js BABEL_DISABLE_CACHE=1 NODE_ENV=TEST nyc ava",
+    "test": "CONFIG=$(pwd)/webpack/webpack.test.config.js BABEL_DISABLE_CACHE=1 NODE_ENV=test nyc ava",
     "coveralls": "nyc report --reporter=text-lcov | coveralls"
   },
   "ava": {
