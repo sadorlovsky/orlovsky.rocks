@@ -3,7 +3,7 @@
   "plugins": ["transform-decorators-legacy", "react-hot-loader/babel"],
   "sourceMaps": true,
   "env": {
-    "TEST": {
+    "test": {
       "plugins": [
         [
           "babel-plugin-webpack-loaders",
