@@ -5,11 +5,11 @@
   "scripts": {
     "start:dev": "babel-node server/dev.js",
     "start:prod": "npm run build && node dist/server.bundle.js",
-    "build:server": "webpack --config webpack/webpack.server.config.js",
-    "build:client": "webpack -p --config webpack/webpack.prod.config.js",
+    "build:server": "webpack --config webpack/webpack.config.server.js",
+    "build:client": "webpack -p --config webpack/webpack.config.prod.js",
     "build": "npm run build:client && npm run build:server",
     "lint": "eslint src server test",
-    "test": "CONFIG=$(pwd)/webpack/webpack.test.config.js BABEL_DISABLE_CACHE=1 NODE_ENV=test nyc ava",
+    "test": "CONFIG=$(pwd)/webpack/webpack.config.test.js BABEL_DISABLE_CACHE=1 NODE_ENV=test nyc ava",
     "coveralls": "nyc report --reporter=text-lcov | coveralls"
   },
   "ava": {
