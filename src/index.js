@@ -11,6 +11,8 @@ render((
 
 if (module.hot) {
   module.hot.accept('./components/App/App', () => {
+    /* eslint global-require: "off" */
+    /* eslint import/newline-after-import: "off" */
     const NextApp = require('./components/App/App').default
     render((
       <AppContainer>
