@@ -79,7 +79,7 @@
     "react-css-modules": "^3.7.6",
     "react-document-title": "^2.0.1",
     "react-dom": "^15.1.0",
-    "react-icons": "github:gorangajic/react-icons",
+    "react-icons": "^2.1.0",
     "react-markdown": "^2.2.0",
     "react-redux": "^4.4.5",
     "react-router": "^2.4.1",
