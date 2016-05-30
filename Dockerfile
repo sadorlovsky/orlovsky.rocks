@@ -1,16 +1,13 @@
-FROM node:6
+FROM mhart/alpine-node
+MAINTAINER Zach Orlovsky <sadorlovsky@gmail.com>
 
-# Create app directory
-RUN mkdir -p /usr/src/app
-WORKDIR /usr/src/app
+COPY package.json /tmp/package.json
+RUN cd /tmp && npm install
+RUN mkdir -p /opt/app && cp -a /tmp/node_modules /opt/app/
 
-# Install app dependencies
-COPY package.json /usr/src/app/
-RUN npm install
-
-# Bundle app source
-COPY . /usr/src/app
+WORKDIR /opt/app
+COPY . /opt/app
 
 EXPOSE 3000
 
-CMD [ "npm", "run", "start:prod" ]
+CMD ["npm", "run", "start:prod"]
