@@ -1,0 +1,14 @@
+version: '2'
+services:
+  web:
+    build: .
+    ports:
+      - '3000:3000'
+  caddy:
+    image: abiosoft/caddy
+    volumes:
+      - ./Caddyfile:/etc/Caddyfile
+    ports:
+      - '80:80'
+    links:
+      - web
