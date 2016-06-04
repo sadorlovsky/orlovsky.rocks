@@ -2,7 +2,7 @@ import React from 'react'
 import { renderToString } from 'react-dom/server'
 import { match, RouterContext } from 'react-router'
 import express from 'express'
-import routes from '../src/routes'
+import routes from '../client/routes'
 
 const app = express()
 

@@ -4,8 +4,7 @@ import webpack from 'webpack'
 import webpackDevMiddleware from 'webpack-dev-middleware'
 import webpackHotMiddleware from 'webpack-hot-middleware'
 /* eslint import/default: "off" */
-import config from '../webpack/webpack.config.dev'
-import blogApi from './api/blog'
+import config from '../../webpack/webpack.config.dev'
 
 const app = express()
 const compiler = webpack(config)
@@ -16,11 +15,11 @@ const hotMiddleware = webpackHotMiddleware(compiler)
 
 app.use(devMiddleware)
 app.use(hotMiddleware)
+app.use(express.static(path.resolve('public')))
 
-app.use('/api/blog', blogApi)
-
-app.get('*', (_, res) => {
-  res.sendFile(path.join(__dirname, '..', 'index.html'))
+app.get('/*', (_, res) => {
+  console.log(path.resolve())
+  res.sendFile(path.resolve('public', 'index.html'))
 })
 
 app.listen(3000, () => {

@@ -10,10 +10,10 @@ module.exports = {
   entry: [
     'react-hot-loader/patch',
     'webpack-hot-middleware/client?reload=true',
-    './src/index'
+    './src/client/index'
   ],
   output: {
-    path: path.join(__dirname, '..', 'dist'),
+    path: path.resolve('dist', 'client'),
     filename: 'bundle.js',
     publicPath: '/static/'
   },
@@ -21,7 +21,7 @@ module.exports = {
     loaders: [
       {
         test: /\.js$/,
-        include: [path.join(__dirname, '..', 'src'), path.join(__dirname, '..', 'node_modules', 'react-icons')],
+        include: [path.resolve('src')],
         loaders: ['babel']
       },
       {
