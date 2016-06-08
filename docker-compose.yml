@@ -10,5 +10,3 @@ services:
       - ./Caddyfile:/etc/Caddyfile
     ports:
       - '80:80'
-    links:
-      - web
