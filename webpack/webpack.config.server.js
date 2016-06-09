@@ -8,7 +8,7 @@ const postcssImport = require('postcss-import')
 const lost = require('lost')
 
 module.exports = {
-  entry: './server/prod',
+  entry: './src/server/prod',
   output: {
     path: path.join(__dirname, '..', 'dist'),
     filename: 'server.bundle.js'
