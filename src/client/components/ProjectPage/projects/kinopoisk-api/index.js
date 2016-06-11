@@ -18,7 +18,7 @@ const KinopoiskApi = () => {
         <div styleName='ruby'>
           <h2>Ruby gem</h2>
           <div>
-            coming soon
+            WIP
           </div>
         </div>
       </div>

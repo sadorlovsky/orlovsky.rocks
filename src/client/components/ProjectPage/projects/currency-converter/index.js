@@ -6,7 +6,7 @@ const CurrencyConverter = () => {
       <h1>Currency Converter</h1>
       <h3>chrome extension</h3>
       <div>
-        <a href='https://github.com/sadorlovsky/currency-converter'>github</a>
+        <a style={{ color: 'hsl(352, 81%, 58%)' }} href='https://github.com/sadorlovsky/currency-converter'>github</a>
       </div>
     </div>
   )
