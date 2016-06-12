@@ -1,4 +1,4 @@
-FROM mhart/alpine-node
+FROM mhart/alpine-node:6.2
 MAINTAINER Zach Orlovsky <sadorlovsky@gmail.com>
 
 COPY package.json /tmp/package.json
