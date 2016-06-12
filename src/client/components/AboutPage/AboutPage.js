@@ -13,7 +13,7 @@ const AboutPage = () => {
           <div styleName='photo'></div>
           <p>Hey! My name is Zach Orlovsky.</p>
           <p>I am a developer from Moscow, currently write some <span styleName='js'>javascript</span> stuff,</p>
-          <p>but i played with <span styleName='rb'>ruby</span> and <span styleName='rb'>rails</span> for some time.</p>
+          <p>but i played with <span styleName='rb'>ruby</span> and <span styleName='rb'>rails</span> for a while.</p>
         </div>
       </div>
     </DocumentTitle>
