@@ -1,6 +1,6 @@
 {
   "name": "orlovsky.rocks",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "Zach Orlovsky's homepage",
   "scripts": {
     "start:dev": "babel-node src/server/dev.js",
