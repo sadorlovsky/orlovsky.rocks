@@ -4,9 +4,9 @@ import { Link } from 'react-router'
 import Face from '../Face/Face'
 import styles from './Nav.sss'
 
-const Nav = () => {
+const Nav = props => {
   return (
-    <div styleName='nav'>
+    <div styleName='nav' style={{ background: props.color }}>
       <div>
         <Link to='/'>
           <Face styleName='face' />

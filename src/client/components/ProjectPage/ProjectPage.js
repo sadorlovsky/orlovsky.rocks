@@ -15,7 +15,7 @@ const ProjectPage = () => {
   return (
     <DocumentTitle title='Projects · Sad Orlovsky'>
       <div>
-        <Nav />
+        <Nav color='rgba(28,29,33,.7)' />
         <div styleName='project-page'>
           <Lissie />
           <Dockerps />
