@@ -10,7 +10,7 @@ const AboutPage = () => {
       <div styleName='about'>
         <Nav />
         <div styleName='text'>
-          <div styleName='photo'></div>
+          <div styleName='photo' />
           <p>Hey! My name is Zach Orlovsky.</p>
           <p>I am a developer from Moscow, currently write some <span styleName='js'>javascript</span> stuff,</p>
           <p>but i played with <span styleName='rb'>ruby</span> and <span styleName='rb'>rails</span> for a while.</p>

@@ -34,11 +34,9 @@ module.exports = {
       }
     ]
   },
-  postcss (_webpack) {
+  postcss () {
     return [
-      postcssImport({
-        addDependencyTo: _webpack
-      }),
+      postcssImport,
       cssnext,
       fontMagician,
       lost
