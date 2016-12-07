@@ -1,11 +1,6 @@
 const fs = require('fs')
 const path = require('path')
 const webpack = require('webpack')
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
-const cssnext = require('postcss-cssnext')
-const fontMagician = require('postcss-font-magician')
-const postcssImport = require('postcss-import')
-const lost = require('lost')
 
 module.exports = {
   entry: './src/server/prod',
@@ -31,26 +26,9 @@ module.exports = {
         loader: 'babel-loader'
       },
       {
-        test: /\.sss$/,
-        loader: ExtractTextPlugin.extract('style', 'css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss-loader?parser=sugarss')
-      },
-      {
         test: /\.(png|jpg|svg)$/,
         loader: 'file-loader?name=static/images/[name].[ext]'
       }
     ]
-  },
-  postcss () {
-    return [
-      postcssImport,
-      cssnext,
-      fontMagician,
-      lost
-    ]
-  },
-  plugins: [
-    new ExtractTextPlugin('app.css', {
-      allChunks: true
-    })
-  ]
+  }
 }

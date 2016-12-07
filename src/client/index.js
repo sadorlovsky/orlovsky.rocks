@@ -1,7 +1,7 @@
 import React from 'react'
 import { render } from 'react-dom'
 import { AppContainer } from 'react-hot-loader'
-import App from './components/App/App'
+import App from './components/App'
 
 render((
   <AppContainer>
@@ -10,10 +10,10 @@ render((
 ), document.getElementById('root'))
 
 if (module.hot) {
-  module.hot.accept('./components/App/App', () => {
+  module.hot.accept('./components/App', () => {
     /* eslint global-require: "off" */
     /* eslint import/newline-after-import: "off" */
-    const NextApp = require('./components/App/App').default
+    const NextApp = require('./components/App').default
     render((
       <AppContainer>
         <NextApp />

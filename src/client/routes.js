@@ -1,10 +1,10 @@
 import React from 'react'
 import { Route, IndexRoute } from 'react-router'
-import ProjectPage from './components/ProjectPage/ProjectPage'
-import HomePage from './components/HomePage/HomePage'
-import AboutPage from './components/AboutPage/AboutPage'
-import Blog from './components/Blog/Blog'
-import Root from './components/Root/Root'
+import ProjectPage from './components/ProjectPage'
+import HomePage from './components/HomePage'
+import AboutPage from './components/AboutPage'
+import Blog from './components/Blog'
+import Root from './components/Root'
 
 const routes = (
   <Route path='/' component={Root}>
