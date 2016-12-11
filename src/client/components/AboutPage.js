@@ -19,7 +19,7 @@ const styles = {
   photo: css({
     width: '200px',
     height: '200px',
-    background: 'url(./Avatar.jpg)',
+    background: 'url(static/avatar.jpg)',
     backgroundSize: 'cover',
     borderRadius: '50%'
   }),
