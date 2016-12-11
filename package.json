@@ -7,6 +7,8 @@
     "start:prod": "npm run build && node dist/server.bundle.js",
     "build:server": "webpack --config webpack/webpack.config.server.js",
     "build:client": "webpack -p --config webpack/webpack.config.prod.js",
+    "dev": "NODE_ENV=development webpack-dev-server --config webpack.config.babel.js",
+    "prod": "NODE_ENV=production webpack --config webpack.config.babel.js",
     "build": "npm run build:client && npm run build:server",
     "lint": "eslint src test",
     "test": "CONFIG=$(pwd)/webpack/webpack.config.test.js BABEL_DISABLE_CACHE=1 NODE_ENV=test nyc ava",
@@ -31,6 +33,9 @@
   "license": "MIT",
   "devDependencies": {
     "@sadorlovsky/eslint-config": "^0.13.0",
+    "@webpack-blocks/babel6": "^0.1.1",
+    "@webpack-blocks/dev-server": "^0.1.0",
+    "@webpack-blocks/webpack": "^0.1.5",
     "ava": "^0.17.0",
     "babel-cli": "^6.10.1",
     "babel-core": "^6.20.0",
@@ -60,6 +65,7 @@
     "react-hot-loader": "3.0.0-beta.6",
     "webpack": "^1.13.1",
     "webpack-dev-middleware": "^1.6.1",
+    "webpack-dev-server": "^1.16.2",
     "webpack-hot-middleware": "^2.10.0"
   },
   "dependencies": {
