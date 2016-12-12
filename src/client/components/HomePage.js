@@ -24,7 +24,7 @@ const styles = {
     justifyContent: 'center',
     border: '5px solid hsl(228, 7%, 81%)',
     paddingRight: '12px',
-    transition: 'border-color .5s',
+    transition: 'border-color .3s',
     ':hover': {
       borderColor: 'hsl(50, 74%, 61%)'
     }
@@ -40,7 +40,18 @@ const styles = {
   }),
   link: css({
     color: 'hsl(228, 7%, 81%)',
-    textDecoration: 'none'
+    textDecoration: 'none',
+    transition: 'color .3s'
+  }),
+  twitter: css({
+    ':hover': {
+      color: '#1da1f2'
+    }
+  }),
+  github: css({
+    ':hover': {
+      color: '#fafafa'
+    }
   })
 }
 
@@ -64,10 +75,14 @@ const HomePage = () => {
               <Link className={`${styles.link}`} to='/projects'>Projects</Link>
             </div>
             <div>
-              <a className={`${styles.link}`} href='https://twitter.com/sadorlovsky'><TwitterIcon /></a>
+              <a className={`${styles.link} ${styles.twitter}`} href='https://twitter.com/sadorlovsky'>
+                <TwitterIcon />
+              </a>
             </div>
             <div>
-              <a className={`${styles.link}`} href='https://github.com/sadorlovsky'><GithubIcon /></a>
+              <a className={`${styles.link} ${styles.github}`} href='https://github.com/sadorlovsky'>
+                <GithubIcon />
+              </a>
             </div>
           </div>
         </div>

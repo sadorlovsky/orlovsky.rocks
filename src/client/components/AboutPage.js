@@ -5,7 +5,7 @@ import Nav from './Nav'
 
 const styles = {
   about: css({
-    background: 'hsl(228, 7%, 81%)',
+    background: 'hsl(228, 7%, 12%)',
     minHeight: '100vh'
   }),
   text: css({
@@ -14,7 +14,8 @@ const styles = {
     justifyContent: 'center',
     flexDirection: 'column',
     height: '100vh',
-    fontSize: '1.5vw'
+    fontSize: '1.1rem',
+    color: '#fff'
   }),
   photo: css({
     width: '200px',
@@ -24,7 +25,7 @@ const styles = {
     borderRadius: '50%'
   }),
   js: css({
-    color: 'hsl(50, 56%, 54%)'
+    color: '#FFB400'
   })
 }
 
@@ -36,7 +37,7 @@ const AboutPage = () => {
         <div {...styles.text}>
           <div {...styles.photo} />
           <p>Hey! My name is Zach Orlovsky.</p>
-          <p>I am a developer from Moscow, currently write some <span {...styles.js}>javascript</span> stuff.</p>
+          <p>I am a developer from Moscow. Currently I write some <span {...styles.js}>javascript</span> stuff.</p>
         </div>
       </div>
     </DocumentTitle>

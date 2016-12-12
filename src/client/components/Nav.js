@@ -7,7 +7,8 @@ const styles = css({
   height: '70px',
   position: 'absolute',
   width: '100%',
-  background: 'hsl(228, 7%, 12%)',
+  // background: 'hsl(228, 7%, 12%)',
+  background: '#000',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center'
