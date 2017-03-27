@@ -13,7 +13,7 @@
   "dependencies": {
     "emoji-favicon": "^0.3.0",
     "express": "^4.15.2",
-    "next": "2.0.0-beta.41",
+    "next": "^2.0.0",
     "react": "^15.4.2",
     "react-dom": "^15.4.2"
   },
