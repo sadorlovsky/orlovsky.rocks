@@ -1,19 +1,11 @@
 import React from 'react'
-import {source} from 'common-tags'
+import Head from 'next/head'
 
 export default () => (
-  <div style={{fontSize: '40px'}}>
-    <pre>
-      <code>{source`
-        const orlovsky = compose(
-           lover,
-          React / Node.js developer,
-          Guy from Moscow with Master's degree
-        )
-
-        const sadorlovsky = map(☹️, orlovsky)
-        `}
-      </code>
-    </pre>
+  <div className="container">
+    <Head>
+      <title>☹️ Sad Orlovsky</title>
+      <meta name="viewport" content="initial-scale=1.0, width=device-width"/>
+    </Head>
   </div>
 )
